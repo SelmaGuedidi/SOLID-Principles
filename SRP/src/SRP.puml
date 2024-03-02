@@ -1,0 +1,32 @@
+@startuml
+class Car {
+    - String _id
+    - String _model
+    - String _brand
+
+    public String getId()
+    public String getModel()
+    public String getBrand()
+}
+class CarManager {
+}
+interface CarComparator {
+Car getBestCar()
+}
+interface CarInfoProvider {
+String getCarsNames()
+}
+class BestCarSelector implements CarComparator {
+}
+class CarNameProvider implements CarInfoProvider{
+}
+class CarDatabase {
+ -List<Car> _carsDb
+ public Car getFromDb(final String carId)
+ public List<Car> getAllCars()
+}
+CarManager --> CarComparator
+CarManager --> CarInfoProvider
+CarNameProvider -- CarDatabase
+BestCarSelector -- CarDatabase
+@enduml

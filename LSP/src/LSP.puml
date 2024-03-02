@@ -1,0 +1,17 @@
+@startuml
+interface Iswim
+{
+    void Swim()
+}
+interface Iquak
+{
+    void Quack()
+}
+
+class Duck implements Iquak,Iswim
+class ElectronicDuck implements Iquak,Iswim
+
+class Pool
+Pool -- Iquak
+Pool -- Iswim
+@enduml

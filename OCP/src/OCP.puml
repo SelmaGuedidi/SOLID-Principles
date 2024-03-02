@@ -1,0 +1,24 @@
+@startuml
+enum ResourceType
+{
+    TIME_SLOT,
+    SPACE_SLOT
+}
+abstract class Resource
+{
+    public abstract void markSlotFree(int);
+
+    public abstract void makeSlotBusy(int);
+
+    public abstract int findFreeSlot();
+}
+
+class SpaceSlot extends Resource
+class TimeSlot extends Resource
+class ResourceAllocator{
+  public int allocate(Resource)
+  public void free(Resource, int)
+
+}
+ResourceAllocator --> Resource
+@enduml
